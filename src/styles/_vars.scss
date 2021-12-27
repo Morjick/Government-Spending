@@ -1,0 +1,52 @@
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn {
+  min-width: 150px;
+  min-height: 50px;
+
+  padding: 5px;
+
+  background: $main;
+  color: $light;
+  border-radius: 5px;
+  font-weight: bold;
+
+  transition: all .5s;
+
+  &-right {
+    margin-left: auto;
+  }
+
+  &-left {
+    margin-right: auto;
+  }
+
+  &:hover {
+    background: none;
+    // border: 2px solid $main;
+    box-shadow: 0 0 3px 1px $main;
+    color: $main;
+  }
+}
+
+.btn_container {
+  display: flex;
+
+  width: 100%;
+  height: auto;
+
+  margin: 10px 0;
+
+  justify-content: center;
+
+  &-righr {
+    justify-content: end;
+  }
+
+  &-left {
+    justify-content: start;
+  }
+}
