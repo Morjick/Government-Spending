@@ -72,19 +72,23 @@ export default {
 
       let href = `https://openapi.clearspending.ru/restapi/v3/contracts/get/?regnum=${id}`
       let cartData = await axios.get(href)
+      let cart = cartData.contracts.data
 
-      const data = JSON.stringify(cartData)
+      const data = JSON.stringify(cart)
       window.localStorage.setItem('arr', data)
       console.log(JSON.parse(window.localStorage.getItem('arr')))
 
       const blob = new Blob([data], {type: 'text/plain'})
       const e = document.createEvent('MouseEvents'),
       a = document.createElement('a')
-      a.download = "test.json"
+      a.download = "Контракт.json"
       a.href = window.URL.createObjectURL(blob)
       a.dataset.downloadurl = ['text/json', a.download, a.href].join(':')
       e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
       a.dispatchEvent(e)
+
+      const cartCSV = this.$papa.parse(cart)
+      this.$papa.download(cartCSV, 'Контракт')
     }
   },
   mounted() {}

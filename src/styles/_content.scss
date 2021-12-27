@@ -1,5 +1,5 @@
 .container {
-  width: 1280px;
+  max-width: 1280px;
   min-height: 100vh;
 
   margin: 100px auto;
@@ -13,7 +13,7 @@
 }
 
 .option {
-  width: 20%;
+  width: 250px;
 
   margin: 0 10px;
 
@@ -36,6 +36,17 @@
     margin: 10px;
     font-size: 16px;
   }
+
+  @media(max-width:700px) {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  @media(max-width: 515px) {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 20px;
+  }
 }
 
 .filter_container {
@@ -50,6 +61,10 @@
     font-weight: 500;
     font-size: 20px;
   }
+
+  @media(max-width: 400px) {
+    padding: 0 20px;
+  }
 }
 
 .filter_select {
@@ -63,9 +78,13 @@
 .result {
   position: relative;
 
-  width: 1230px;
+  max-width: 1230px;
 
   margin: 0 auto;
+
+  @media(max-width: 1280px) {
+    margin: 0 20px;
+  }
 }
 
 .cart {
@@ -85,6 +104,10 @@
   display: flex;
 
   margin: 8px 0;
+
+  @media(max-width: 640px) {
+    display: block;
+  }
 }
 
 .fool-btn {
@@ -106,6 +129,10 @@
   &:hover::after {
     opacity: 1;
     transform: translateY(-10px);
+  }
+
+  @media(max-width: 640px) {
+    margin: 0;
   }
 }
 

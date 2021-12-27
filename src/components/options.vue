@@ -9,13 +9,8 @@
 
       <div class="option">
         <label for="contractsDate">Дата заключения контракта</label>
-        <input v-model="contractDate" id="contractsDate" type="text">
+        <input v-model="contractDate" id="contractsDate" type="date">
       </div>
-
-      <!-- <div class="option">
-        <label for="budget">Бюджет</label>
-        <input v-model="budget" id="budget" type="text">
-      </div> -->
 
       <div class="option">
         <label for="innSupplier">ИНН  поставщика</label>

@@ -26,4 +26,8 @@
 .header_logo {
   font-weight: 700;
   font-size: 24px;
+
+  @media(max-width: 400px) {
+    font-size: 22px;
+  }
 }
