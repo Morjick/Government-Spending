@@ -66,9 +66,6 @@ export default {
   },
   props: ['contracts', 'options'],
   methods: {
-    loger() {
-      console.log(this.contractsData)
-    },
     async downloadCart(id) {
       const Element = document.getElementById(id)
       console.log(Element)
@@ -90,8 +87,6 @@ export default {
       a.dispatchEvent(e)
     }
   },
-  mounted() {
-    this.loger()
-  }
+  mounted() {}
 }
 </script>

@@ -28,6 +28,7 @@ import Header from './components/header'
 import Options from './components/options'
 import Result from './components/result'
 import Contacts from './data/contacts.json'
+// import Contacts from '../data/contacts.json'
 
 export default {
   name: 'App',

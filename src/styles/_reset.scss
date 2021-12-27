@@ -16,6 +16,19 @@
   box-sizing: border-box;
 }
 
+body {
+  &::-webkit-scrollbar {
+    width: 8px;
+    background: #969696;
+    overflow: visible;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 8px;
+    background: $contrast;
+    border-radius: 8px;
+  }
+}
+
 #app {
   max-width: 100vw;
   overflow: hidden;
