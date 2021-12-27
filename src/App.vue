@@ -46,23 +46,22 @@ export default {
       this.options = options
       let Options = []
 
-      if(this.options.contactNumber) Options.number = `http://openapi.clearspending.ru/restapi/v3/contracts/get/?regnum=${this.options.contactNumber}`
+      if(this.options.contactNumber) Options.number = `?regnum=${this.options.contactNumber}`
       
-      if(this.options.contractDate) Options.signDate = `http://openapi.clearspending.ru/restapi/v3/contracts/get/?signDate=${this.options.contractDate}`
+      if(this.options.contractDate) Options.signDate = `?signDate=${this.options.contractDate}`
 
-      if(this.options.innCustomer) Options.innCustomer = `http://openapi.clearspending.ru/restapi/v3/contracts/get/?customerinn=${this.options.innCustomer}`
+      if(this.options.innCustomer) Options.innCustomer = `?customerinn=${this.options.innCustomer}`
 
-      if(this.options.innSupplier) Options.innSupplier = `http://openapi.clearspending.ru/restapi/v3/contracts/get/?supplierinn=${this.options.innSupplier}`
+      if(this.options.innSupplier) Options.innSupplier = `?supplierinn=${this.options.innSupplier}`
 
-      if(this.options.kppCustomer) Options.kppCustomer = `http://openapi.clearspending.ru/restapi/v3/contracts/get/?customerkpp=${this.options.kppCustomer}`
+      if(this.options.kppCustomer) Options.kppCustomer = `?customerkpp=${this.options.kppCustomer}`
 
-      if(this.options.kppSupplier) Options.kppSupplier = `http://openapi.clearspending.ru/restapi/v3/contracts/get/?supplierkpp=${this.options.kppSupplier}`
+      if(this.options.kppSupplier) Options.kppSupplier = `?supplierkpp=${this.options.kppSupplier}`
 
-      if(this.options.adress) Options.adress = `http://openapi.clearspending.ru/restapi/v3/contracts/get/?customerregion=${this.options.adress}`
+      if(this.options.adress) Options.adress = `?customerregion=${this.options.adress}`
 
-      if(this.options.fz) Options.fz = `http://openapi.clearspending.ru/restapi/v3/contracts/get/?fz=${this.options.fz}`
+      if(this.options.fz) Options.fz = `?fz=${this.options.fz}`
 
-      
       // `http://openapi.clearspending.ru/restapi/v3/contracts/get/?regnum=0173100000414000011`
       console.log(Options)
     },
