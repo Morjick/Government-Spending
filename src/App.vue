@@ -49,26 +49,61 @@ export default {
       document.title = 'Государственные траты'
     },
     optionFilter(options) {
+      lodaer = true
       this.options = options
       let Options = []
 
-      if(this.options.contactNumber) Options.number = `?regnum=${this.options.contactNumber}`
+      let startHref = 'http://openapi.clearspending.ru/restapi/v3/contracts/get/?'
+
+      if(this.options.contactNumber) {
+        Options.number = `&regnum=${this.options.contactNumber}`
+        startHref += Options.number
+      }
       
-      if(this.options.contractDate) Options.signDate = `?signDate=${this.options.contractDate}`
+      if(this.options.contractDate) {
+        Options.signDate = `&signDate=${this.options.contractDate}`
+        startHref += Options.signDate
+      }
 
-      if(this.options.innCustomer) Options.innCustomer = `?customerinn=${this.options.innCustomer}`
+      if(this.options.innCustomer) {
+        Options.innCustomer = `&customerinn=${this.options.innCustomer}`
+        startHref += Options.innCustomer
+      }
 
-      if(this.options.innSupplier) Options.innSupplier = `?supplierinn=${this.options.innSupplier}`
+      if(this.options.innSupplier) {
+        Options.innSupplier = `&supplierinn=${this.options.innSupplier}`
+        startHref += Options.innSupplier
+      }
 
-      if(this.options.kppCustomer) Options.kppCustomer = `?customerkpp=${this.options.kppCustomer}`
+      if(this.options.kppCustomer) {
+        Options.kppCustomer = `&customerkpp=${this.options.kppCustomer}`
+        startHref += Options.kppCustomer
+      }
 
-      if(this.options.kppSupplier) Options.kppSupplier = `?supplierkpp=${this.options.kppSupplier}`
+      if(this.options.kppSupplier) {
+        Options.kppSupplier = `&supplierkpp=${this.options.kppSupplier}`
+        startHref += Options.kppSupplier
+      }
 
-      if(this.options.adress) Options.adress = `?customerregion=${this.options.adress}`
+      if(this.options.adress) {
+        Options.adress = `&customerregion=${this.options.adress}`
+        startHref += Options.adress
+      }
 
-      if(this.options.fz) Options.fz = `?fz=${this.options.fz}`
+      if(this.options.fz) {
+        Options.fz = `&fz=${this.options.fz}`
+        startHref += Options.fz
+      }
+
+      const data = await axios.get('https://openapi.clearspending.ru/restapi/v3/contracts/top/?year=2021')
+
+      let contacts = JSON.stringify(data)
+      let opt =  JSON.parse(contacts)
+      this.contracts = opt.contracts.data
+      this.loader = false
 
       // `http://openapi.clearspending.ru/restapi/v3/contracts/get/?regnum=0173100000414000011`
+      
       console.log(Options)
     },
     async getContact() {
