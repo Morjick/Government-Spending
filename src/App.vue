@@ -48,8 +48,8 @@ export default {
     title() {
       document.title = 'Государственные траты'
     },
-    optionFilter(options) {
-      lodaer = true
+    async optionFilter(options) {
+      this.lodaer = true
       this.options = options
       let Options = []
 
@@ -104,7 +104,7 @@ export default {
 
       // `http://openapi.clearspending.ru/restapi/v3/contracts/get/?regnum=0173100000414000011`
       
-      console.log(Options)
+      console.log(startHref)
     },
     async getContact() {
       this.loader = true
