@@ -55,7 +55,7 @@
 </template>
 
 <script>
-// import Contract from '@/data/contracts.json'
+import axios from 'axios'
 
 export default {
   data() {
@@ -69,13 +69,25 @@ export default {
     loger() {
       console.log(this.contractsData)
     },
-    downloadCart(id) {
+    async downloadCart(id) {
       const Element = document.getElementById(id)
       console.log(Element)
 
       let href = `https://openapi.clearspending.ru/restapi/v3/contracts/get/?regnum=${id}`
+      let cartData = await axios.get(href)
 
-      console.log(href)
+      const data = JSON.stringify(cartData)
+      window.localStorage.setItem('arr', data)
+      console.log(JSON.parse(window.localStorage.getItem('arr')))
+
+      const blob = new Blob([data], {type: 'text/plain'})
+      const e = document.createEvent('MouseEvents'),
+      a = document.createElement('a')
+      a.download = "test.json"
+      a.href = window.URL.createObjectURL(blob)
+      a.dataset.downloadurl = ['text/json', a.download, a.href].join(':')
+      e.initEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+      a.dispatchEvent(e)
     }
   },
   mounted() {
