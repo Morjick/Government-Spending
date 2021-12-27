@@ -3,7 +3,7 @@
     <div class="options_inner">
 
       <div class="option">
-        <label for="contactsNumers">Номер контакта</label>
+        <label for="contactsNumers">Номер контракта</label>
         <input v-model="contactNumber" id="contactsNumers" type="text">
       </div>
 
@@ -12,10 +12,10 @@
         <input v-model="contractDate" id="contractsDate" type="text">
       </div>
 
-      <div class="option">
+      <!-- <div class="option">
         <label for="budget">Бюджет</label>
         <input v-model="budget" id="budget" type="text">
-      </div>
+      </div> -->
 
       <div class="option">
         <label for="innSupplier">ИНН  поставщика</label>
@@ -34,7 +34,7 @@
 
       <div class="option">
         <label for="kppSupplier">КПП поставщика</label>
-        <input v-model="kppCustomer" id="kppSupplier" type="text">
+        <input v-model="kppSupplier" id="kppSupplier" type="text">
       </div>
 
       <div class="option">
@@ -129,7 +129,7 @@
         </select>
       </div>
 
-       <div class="option">
+       <!-- <div class="option">
         <label for="id_sort">Сортировать</label>
         <select v-model="sort" id="id_sort" class="form-control" name="sort">
           <option value="">---</option>
@@ -138,7 +138,7 @@
           <option value="-signDate" selected="selected">Cвежий вверху</option>
           <option value="signDate">Давнишний вверху</option>
         </select>
-      </div>
+      </div> -->
 
       <div class="option">
         <label for="id_fz">Федеральный закон</label>

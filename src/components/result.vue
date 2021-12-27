@@ -2,188 +2,41 @@
   <div class="result">
     <div class="result_inner">
 
-      <div class="cart">
+      <div v-for="contract of contracts" :key="contract.id" class="cart">
 
         <div class="cart_item">
-          <p>Номер контакта:</p>
-          <button class="fool-btn">2420000008321000328</button>
+          <p>Номер контpакта:</p>
+          <button class="fool-btn">{{contract.regNum}}</button>
         </div>
 
         <div class="cart_item">
           <p>Заказчик:</p>
-          <button class="fool-btn"> ГОСУДАРСТВЕННОЕ КАЗЕННОЕ УЧРЕЖДЕНИЕ "ДИРЕКЦИЯ АВТОМОБИЛЬНЫХ ДОРОГ КУЗБАССА"</button>
+          <button class="fool-btn"> {{contract.customer.fullName }}</button>
         </div>
 
         <div class="cart_item">
           <p>Поставщик:</p>
-          <button class="fool-btn">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "СДС - СТРОЙ"</button>
+          <button class="fool-btn">{{ contract.suppliers[0].organizationName }}</button>
         </div>
 
         <div class="cart_item">
           <p>Предмет:</p>
-          <button class="fool-btn">Выполнение работ по проектированию, строительству платной автомобильной дороги общего пользования регионального или межмуниципального значения Кемеровской области-Кузбасса Северо-Западный обход города Кемерово</button>
+          <button class="fool-btn">{{ contract.products[0].name }}</button>
         </div>
 
         <div class="cart_item">
           <p>Федеральный закон:</p>
-          <button class="fool-btn">№ 44-ФЗ</button>
+          <button class="fool-btn">№ {{ contract.fz }} ФЗ</button>
         </div>
 
         <div class="cart_item">
           <p>Дата заключения:</p>
-          <button class="fool-btn">2021-11-29</button>
-        </div>
-
-        <button class="download_btn">
-          <img src="@/assets/download.png" alt="">
-        </button>
-
-      </div>
-
-      <div class="cart">
-
-        <div class="cart_item">
-          <p>Номер контакта:</p>
-          <button class="fool-btn">2420000008321000328</button>
+          <button class="fool-btn">{{ contract.signDate }}</button>
         </div>
 
         <div class="cart_item">
-          <p>Заказчик:</p>
-          <button class="fool-btn"> ГОСУДАРСТВЕННОЕ КАЗЕННОЕ УЧРЕЖДЕНИЕ "ДИРЕКЦИЯ АВТОМОБИЛЬНЫХ ДОРОГ КУЗБАССА"</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Поставщик:</p>
-          <button class="fool-btn">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "СДС - СТРОЙ"</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Предмет:</p>
-          <button class="fool-btn">Выполнение работ по проектированию, строительству платной автомобильной дороги общего пользования регионального или межмуниципального значения Кемеровской области-Кузбасса Северо-Западный обход города Кемерово</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Федеральный закон:</p>
-          <button class="fool-btn">№ 44-ФЗ</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Дата заключения:</p>
-          <button class="fool-btn">2021-11-29</button>
-        </div>
-
-        <button class="download_btn">
-          <img src="@/assets/download.png" alt="">
-        </button>
-
-      </div>
-
-      <div class="cart">
-
-        <div class="cart_item">
-          <p>Номер контакта:</p>
-          <button class="fool-btn">2420000008321000328</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Заказчик:</p>
-          <button class="fool-btn"> ГОСУДАРСТВЕННОЕ КАЗЕННОЕ УЧРЕЖДЕНИЕ "ДИРЕКЦИЯ АВТОМОБИЛЬНЫХ ДОРОГ КУЗБАССА"</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Поставщик:</p>
-          <button class="fool-btn">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "СДС - СТРОЙ"</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Предмет:</p>
-          <button class="fool-btn">Выполнение работ по проектированию, строительству платной автомобильной дороги общего пользования регионального или межмуниципального значения Кемеровской области-Кузбасса Северо-Западный обход города Кемерово</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Федеральный закон:</p>
-          <button class="fool-btn">№ 44-ФЗ</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Дата заключения:</p>
-          <button class="fool-btn">2021-11-29</button>
-        </div>
-
-        <button class="download_btn">
-          <img src="@/assets/download.png" alt="">
-        </button>
-
-      </div>
-
-      <div class="cart">
-
-        <div class="cart_item">
-          <p>Номер контакта:</p>
-          <button class="fool-btn">2420000008321000328</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Заказчик:</p>
-          <button class="fool-btn"> ГОСУДАРСТВЕННОЕ КАЗЕННОЕ УЧРЕЖДЕНИЕ "ДИРЕКЦИЯ АВТОМОБИЛЬНЫХ ДОРОГ КУЗБАССА"</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Поставщик:</p>
-          <button class="fool-btn">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "СДС - СТРОЙ"</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Предмет:</p>
-          <button class="fool-btn">Выполнение работ по проектированию, строительству платной автомобильной дороги общего пользования регионального или межмуниципального значения Кемеровской области-Кузбасса Северо-Западный обход города Кемерово</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Федеральный закон:</p>
-          <button class="fool-btn">№ 44-ФЗ</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Дата заключения:</p>
-          <button class="fool-btn">2021-11-29</button>
-        </div>
-
-        <button class="download_btn">
-          <img src="@/assets/download.png" alt="">
-        </button>
-
-      </div>
-
-      <div class="cart">
-
-        <div class="cart_item">
-          <p>Номер контакта:</p>
-          <button class="fool-btn">2420000008321000328</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Заказчик:</p>
-          <button class="fool-btn"> ГОСУДАРСТВЕННОЕ КАЗЕННОЕ УЧРЕЖДЕНИЕ "ДИРЕКЦИЯ АВТОМОБИЛЬНЫХ ДОРОГ КУЗБАССА"</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Поставщик:</p>
-          <button class="fool-btn">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ "СДС - СТРОЙ"</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Предмет:</p>
-          <button class="fool-btn">Выполнение работ по проектированию, строительству платной автомобильной дороги общего пользования регионального или межмуниципального значения Кемеровской области-Кузбасса Северо-Западный обход города Кемерово</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Федеральный закон:</p>
-          <button class="fool-btn">№ 44-ФЗ</button>
-        </div>
-
-        <div class="cart_item">
-          <p>Дата заключения:</p>
-          <button class="fool-btn">2021-11-29</button>
+          <p>Цена:</p>
+          <button class="fool-btn">{{contract.price}} рублей</button>
         </div>
 
         <button class="download_btn">
@@ -198,6 +51,20 @@
 
 <script>
 export default {
-  methods: {}
+  data() {
+    return {
+      contractsData: this.contracts,
+      optionsData: this.options
+    }
+  },
+  props: ['contracts', 'options'],
+  methods: {
+    loger() {
+      console.log(this.contractsData)
+    }
+  },
+  mounted() {
+    this.loger()
+  }
 }
 </script>
