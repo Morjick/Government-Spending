@@ -11,7 +11,11 @@
         <p>Что удалось найти:</p>
       </div>
 
-      <p v-if="this.error"> {{this.error}} </p>
+      <!-- <p v-if="this.error"> {{this.error}} </p> -->
+      <div v-if="this.loader" class="filter_container">
+        <p class="center">Подождите, загружаем...</p>
+      </div>
+      
       <Result 
         :contracts="contracts" 
         :options="options"
@@ -36,7 +40,8 @@ export default {
     return {
       contracts: [],
       options: [],
-      error: ''
+      loader: false,
+      // error: ''
     }
   },
   methods: {
@@ -67,17 +72,20 @@ export default {
       console.log(Options)
     },
     async getContact() {
+      this.loader = true
       try {
         const data = await axios.get('https://openapi.clearspending.ru/restapi/v3/contracts/top/?year=2021')
       
         // https://openapi.clearspending.ru/restapi/v3/contracts/top/?year=2021
         console.log(data)
         this.contracts = data
+        this.loader = false
       } catch(e) {
         this.error = e
         let contacts = JSON.stringify(Contacts)
         let opt =  JSON.parse(contacts)
         this.contracts = opt.contracts.data
+        this.loader = false
       }
     },
   },

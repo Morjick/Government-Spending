@@ -73,7 +73,7 @@ export default {
       let href = `https://openapi.clearspending.ru/restapi/v3/contracts/get/?regnum=${id}`
       let cartData = await axios.get(href)
 
-      const data = JSON.stringify(cartData.contracts.data)
+      const data = JSON.stringify(cartData)
       window.localStorage.setItem('arr', data)
       console.log(JSON.parse(window.localStorage.getItem('arr')))
 
