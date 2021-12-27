@@ -26,6 +26,11 @@ import Result from './components/result'
 
 export default {
   name: 'App',
+  data() {
+    return {
+      options: []
+    }
+  },
   methods: {
     title() {
       document.title = 'Государственные траты'
@@ -38,6 +43,12 @@ export default {
       
       // https://openapi.clearspending.ru/restapi/v3/contracts/top/?year=2021
       console.log(data)
+      this.options = data
+
+      this.editFilter()
+    },
+    editFilter() {
+      console.log(this.options, 'hello')
     }
   },
   mounted() {
