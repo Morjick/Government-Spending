@@ -2,7 +2,12 @@
   <div class="result">
     <div class="result_inner">
 
-      <div v-for="contract of contracts" :key="contract.id" class="cart">
+      <div 
+        v-for="contract of contracts" 
+        :key="contract.id" 
+        :id="contract.regNum"
+        class="cart"
+      >
 
         <div class="cart_item">
           <p>Номер контpакта:</p>
@@ -39,7 +44,7 @@
           <button class="fool-btn">{{contract.price}} рублей</button>
         </div>
 
-        <button class="download_btn">
+        <button @click="downloadCart(contract.regNum)" class="download_btn">
           <img src="@/assets/download.png" alt="">
         </button>
 
@@ -50,6 +55,8 @@
 </template>
 
 <script>
+// import Contract from '@/data/contracts.json'
+
 export default {
   data() {
     return {
@@ -61,6 +68,14 @@ export default {
   methods: {
     loger() {
       console.log(this.contractsData)
+    },
+    downloadCart(id) {
+      const Element = document.getElementById(id)
+      console.log(Element)
+
+      let href = `https://openapi.clearspending.ru/restapi/v3/contracts/get/?regnum=${id}`
+
+      
     }
   },
   mounted() {
