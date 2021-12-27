@@ -75,7 +75,7 @@ export default {
 
       let href = `https://openapi.clearspending.ru/restapi/v3/contracts/get/?regnum=${id}`
 
-      
+      console.log(href)
     }
   },
   mounted() {
